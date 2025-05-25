@@ -1,0 +1,36 @@
+.login-form {
+    background-color: #f4f2f3;
+    max-width: 500px;
+    width: 70%;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+  }
+  .form {
+    padding-right: 1rem;
+    padding-left: 0.2rem;
+  }
+  .TextField {
+    max-width: 450px;
+    width: 100%;
+    margin: 10px;
+  }
+  .login-btn,
+  .login-head {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .login-head {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: x-large;
+  }
+  .password-eye {
+    cursor: pointer;
+  }
+  .button {
+    background-color: #314650;
+    color: white;
+  }
+  
