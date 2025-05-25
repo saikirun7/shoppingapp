@@ -73,26 +73,33 @@ function Cart() {
           marginTop: "30px",
         }}
       >
-        {cartData.map((product) => (
-          <div
-            key={product.productId}
-            style={{
-              border: "1px solid #ccc",
-              borderRadius: "10px",
-              padding: "16px",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-              textAlign: "center",
-              backgroundColor: "#f9f9f9",
-            }}
-          >
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            <p>
-              <strong>₹{product.price}</strong>
-            </p>
-            <button onClick={() => deleteFromCart(product.productId)}>Delete from cart</button>
-          </div>
-        ))}
+        {cartData.length === 0 ? (
+          <p style={{ textAlign: "center", fontWeight: "bold" }}>Cart is empty</p>
+        ) : (
+          cartData.map((product) => (
+            <div
+              key={product.productId}
+              style={{
+                border: "1px solid #ccc",
+                borderRadius: "10px",
+                padding: "16px",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                textAlign: "center",
+                backgroundColor: "#f9f9f9",
+                marginBottom: "16px", // optional: spacing between products
+              }}
+            >
+              <h3>{product.name}</h3>
+              <p>{product.description}</p>
+              <p>
+                <strong>₹{product.price}</strong>
+              </p>
+              <button onClick={() => deleteFromCart(product.productId)}>
+                Delete from cart
+              </button>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
