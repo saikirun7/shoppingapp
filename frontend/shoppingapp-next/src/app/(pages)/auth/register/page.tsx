@@ -4,8 +4,10 @@ import { Button, TextField } from '@mui/material';
 import axios from 'axios';
 import { useState } from 'react'
 import '../auth.css'
+import { useRouter } from 'next/navigation';
 
 function Register() {
+  const route = useRouter();
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [mobile, setMobile] = useState<string>("");
@@ -17,6 +19,7 @@ function Register() {
     try{
       const response = await axios.post<{message: string}>("http://localhost:8080/auth/user/register", {name, email, mobile, password, role});
       console.log(response.data);
+      route.push("/auth/login");
     } catch(error){
       console.log(error);
     }
